@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  ansible-deployment:
+    network_mode: "host"
+    build: .
+    environment:
+      - SSH_AUTH_SOCK=/ssh-agent
+    volumes:
+      - ${SSH_AUTH_SOCK}:/ssh-agent
