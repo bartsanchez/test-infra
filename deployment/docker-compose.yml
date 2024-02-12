@@ -5,6 +5,7 @@ services:
     build: .
     environment:
       - ANSIBLE_HOST=${ANSIBLE_HOST}
+      - ANSIBLE_USER=${ANSIBLE_USER}
       - SSH_AUTH_SOCK=/ssh-agent
     volumes:
       - ${SSH_AUTH_SOCK}:/ssh-agent

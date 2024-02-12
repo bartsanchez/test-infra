@@ -2,5 +2,3 @@ virtual_machines:
   hosts:
     vm:
       ansible_host: localhost
-  vars:
-    ansible_user: root
