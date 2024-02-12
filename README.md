@@ -88,5 +88,11 @@ Just execute:
 make deploy
 ```
 
+Or, alternatively, with just a single command:
+
+```sh
+ANSIBLE_HOST="1.2.3.4" make deploy
+```
+
 And you should be able to reach target's ip at port 80 and see the
 frontend application returning the hour coming from the backend.
