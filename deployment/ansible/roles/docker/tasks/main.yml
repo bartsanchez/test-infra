@@ -3,3 +3,8 @@
   package:
     name: docker.io
     state: present
+
+- name: Install Docker Compose
+  package:
+    name: docker-compose
+    state: present
