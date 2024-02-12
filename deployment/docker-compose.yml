@@ -4,6 +4,7 @@ services:
     network_mode: "host"
     build: .
     environment:
+      - ANSIBLE_HOST=${ANSIBLE_HOST}
       - SSH_AUTH_SOCK=/ssh-agent
     volumes:
       - ${SSH_AUTH_SOCK}:/ssh-agent

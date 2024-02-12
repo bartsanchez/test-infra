@@ -1,5 +1,6 @@
 virtual_machines:
   hosts:
-    192.168.122.188
+    vm:
+      ansible_host: localhost
   vars:
     ansible_user: root
