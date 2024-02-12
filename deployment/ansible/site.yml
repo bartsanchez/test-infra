@@ -1,5 +1,4 @@
 ---
 - hosts: virtual_machines
-  tasks:
-    - name: Ensure connection to VM
-      ansible.builtin.ping:
+  roles:
+    - healthcheck
