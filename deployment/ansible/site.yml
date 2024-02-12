@@ -3,3 +3,4 @@
   roles:
     - healthcheck
     - docker
+    - services

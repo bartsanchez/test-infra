@@ -1,0 +1,35 @@
+---
+- name: Copy compose file
+  ansible.builtin.copy:
+    src: files/docker-compose.yml
+    dest: /opt/services/
+
+- name: Copy backend service
+  ansible.builtin.copy:
+    src: files/backend
+    dest: /opt/services/
+
+- name: Copy frontend service
+  ansible.builtin.copy:
+    src: files/frontend
+    dest: /opt/services/
+
+- name: Tear down existing services
+  community.docker.docker_compose:
+    project_src: /opt/services/
+    state: absent
+
+- name: Prune everything (including non-dangling images)
+  community.docker.docker_prune:
+    containers: true
+    images: true
+    images_filters:
+      dangling: false
+    networks: true
+    volumes: true
+    builder_cache: true
+
+- name: Start services
+  community.docker.docker_compose:
+    project_src: /opt/services/
+    state: present
