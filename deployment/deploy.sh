@@ -5,7 +5,8 @@ set -o pipefail
 set -o nounset
 
 CURRENT_PATH="${BASH_SOURCE%/*}"
-INVENTORY_FILE="${CURRENT_PATH}/ansible/inventory.yml"
-DEPLOYMENT_FILE="${CURRENT_PATH}/ansible/deploy.yml"
+ANSIBLE_PATH="$CURRENT_PATH/ansible"
+TARGET="${ANSIBLE_PATH}/production"
+MASTER_PLAYBOOK="${ANSIBLE_PATH}/site.yml"
 
-ansible-playbook -i ${INVENTORY_FILE} ${DEPLOYMENT_FILE}
+ansible-playbook -i ${TARGET} ${MASTER_PLAYBOOK}
