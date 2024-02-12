@@ -2,3 +2,4 @@
 - hosts: virtual_machines
   roles:
     - healthcheck
+    - docker
